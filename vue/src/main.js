@@ -1,9 +1,27 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createRouter, createWebHistory } from 'vue-router'
+import CookieClicker from '@/views/CookieClicker.vue'
+import UserCreate from '@/views/UserCreate.vue'
+import UserList from '@/views/UserList.vue'
 
-const app = createApp(App)
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: CookieClicker,
+    },
+    {
+      path: '/usercreate',
+      name: 'user-create',
+      component: UserCreate,
+    },
+    {
+      path: '/userlist',
+      name: 'user-list',
+      component: UserList,
+    },
+  ],
+})
 
-app.use(router)
-
-app.mount('#app')
+export default router
