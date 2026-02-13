@@ -1,10 +1,13 @@
 <template>
   <div class="container">
-    <h1>Cookie Clicker</h1>
-    <h2>{{ count }}</h2>
+    <h1><button @click="reset">Home</button></h1>
+    <h1><button @click="reset">Notes</button></h1>
+    <h1><button @click="reset">Playlist</button></h1>
+    <h1><button @click="reset">About</button></h1>
+    <h1><button @click="reset">Login</button></h1>
     <!-- <img @click="increment" src="/cookie.png" alt="" /> -->
-    <button @click="reset">Reset</button>
   </div>
+  <h2>{{ count }}</h2>
 </template>
 
 <script setup>
@@ -29,14 +32,20 @@ img {
 }
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  height: 70px;
+  gap: 20px;
 }
 button {
   height: 50px;
   width: 100px;
+  background-color: #42b983;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 </style>
 
