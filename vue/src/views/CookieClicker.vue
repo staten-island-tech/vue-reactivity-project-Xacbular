@@ -5,6 +5,7 @@
     <h1><button @click="reset">Playlist</button></h1>
     <h1><button @click="reset">About</button></h1>
     <h1><button @click="reset">Login</button></h1>
+    <router-link to="/login" class="btn"> Go to Login </router-link>
     <!-- <img @click="increment" src="/cookie.png" alt="" /> -->
   </div>
   <h2>{{ count }}</h2>
