@@ -8,6 +8,7 @@
     <router-link to="/login" class="btn"> Go to Login </router-link>
     <!-- <img @click="increment" src="/cookie.png" alt="" /> -->
   </div>
+  <div class="home"></div>
   <h2>{{ count }}</h2>
 </template>
 
@@ -25,6 +26,27 @@ function reset() {
 </script>
 
 <style scoped>
+.home {
+  background-color: #c2f5c7;
+  padding: 20px;
+  border-radius: 5px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100px;
+  background-color: #42b983;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #36a76a;
+}
 img {
   width: 200px;
   height: auto;
@@ -32,6 +54,7 @@ img {
   margin-top: 20px;
 }
 .container {
+  background-color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
