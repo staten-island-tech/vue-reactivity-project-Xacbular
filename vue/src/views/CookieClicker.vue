@@ -27,6 +27,8 @@ function reset() {
 
 <style scoped>
 .home {
+  margin: none;
+  border: none;
   background-color: #c2f5c7;
   padding: 20px;
   border-radius: 5px;
@@ -37,15 +39,15 @@ function reset() {
   justify-content: center;
   height: 50px;
   width: 100px;
-  background-color: #42b983;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  text-decoration-color: #42b983;
 }
 .btn:hover {
-  background-color: #36a76a;
+  text-decoration-color: #42b983;
 }
 img {
   width: 200px;
