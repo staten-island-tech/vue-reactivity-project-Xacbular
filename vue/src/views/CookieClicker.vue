@@ -1,11 +1,10 @@
 <template>
   <div class="container">
-    <h1><button @click="reset">Home</button></h1>
+    <h1><button @click="increment">Home</button></h1>
     <h1><button @click="reset">Notes</button></h1>
     <h1><button @click="reset">Playlist</button></h1>
     <h1><button @click="reset">About</button></h1>
-    <h1><button @click="reset">Login</button></h1>
-    <router-link to="/login" class="btn"> Go to Login </router-link>
+    <router-link to="/login" class="btn">Login</router-link>
     <!-- <img @click="increment" src="/cookie.png" alt="" /> -->
   </div>
   <div class="home"></div>
@@ -39,15 +38,14 @@ function reset() {
   justify-content: center;
   height: 50px;
   width: 100px;
-  color: white;
+  color: gray;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  text-decoration-color: #42b983;
 }
 .btn:hover {
-  text-decoration-color: #42b983;
+  color: black;
 }
 img {
   width: 200px;
