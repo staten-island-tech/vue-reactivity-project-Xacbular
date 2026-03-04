@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="container">
     <Music v-for="song in playlist" :key="song.title" :song="song">{{ song.title }}</Music>
   </div>
 </template>
 
-<script>
-import { ref } from 'vue'
-import { Music } from '@/components/Music.vue'
-const playlist = ref([
+<script setup>
+import { reactive } from 'vue'
+import Music from '@/components/Music.vue'
+const playlist = reactive([
   {
     title: 'Green Tea Dreams',
     artist: 'Cafe Vibes',
@@ -35,5 +35,13 @@ const playlist = ref([
 <style scoped>
 div {
   padding: 16px;
+}
+.container {
+  display: flex;
+  width: 80vw;
+  margin: 20px auto;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ song.name }}</h2>
+    <h2>{{ song.title }}</h2>
     <h3>{{ song.artist }}</h3>
   </div>
 </template>
@@ -15,13 +15,15 @@ defineProps({
 </script>
 
 <style scoped>
+h2,
+h3 {
+  margin: 0;
+}
 div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 300px;
-  width: 200px;
+  width: 100%;
+  height: 50px;
   border: 3px solid black;
 }
 </style>
