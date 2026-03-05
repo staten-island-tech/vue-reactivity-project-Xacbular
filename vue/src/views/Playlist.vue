@@ -14,6 +14,7 @@ const playlist = reactive([
     color: '#D8E2DC',
     next: 'Jasmine Serenity',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    imageurl: '/images/example.jpg',
   },
   {
     title: 'Jasmine Serenity',
@@ -38,7 +39,7 @@ div {
 }
 .container {
   display: flex;
-  width: 80vw;
+  width: 95%;
   margin: 20px auto;
   justify-content: space-around;
   align-items: center;

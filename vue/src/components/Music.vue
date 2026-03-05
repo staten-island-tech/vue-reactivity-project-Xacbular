@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img class="album-cover" :src="song.imageurl" alt="Album Cover" />
     <h2>{{ song.title }}</h2>
     <h3>{{ song.artist }}</h3>
   </div>
@@ -23,7 +24,15 @@ div {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 50px;
+  height: auto;
   border: 3px solid black;
+}
+img {
+  margin: 0;
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  display: block;
 }
 </style>
