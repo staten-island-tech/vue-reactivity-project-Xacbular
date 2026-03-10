@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <h1><button @click="increment">Home</button></h1>
-    <h1><button @click="reset">Notes</button></h1>
     <router-link to="/playlist" class="btn">Songs</router-link>
-    <h1><button @click="reset">About</button></h1>
     <router-link to="/login" class="btn">Login</router-link>
     <!-- <img @click="increment" src="/cookie.png" alt="" /> -->
   </div>

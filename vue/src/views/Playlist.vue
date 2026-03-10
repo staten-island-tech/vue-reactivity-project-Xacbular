@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <Music v-for="song in playlist" :key="song.title" :song="song">{{ song.title }}</Music>
+  <div class="playlist">
+    <div class="container">
+      <Music v-for="song in playlist" :key="song.title" :song="song">{{ song.title }}</Music>
+    </div>
   </div>
 </template>
 
@@ -44,5 +46,10 @@ div {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+}
+.playlist {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
 }
 </style>
