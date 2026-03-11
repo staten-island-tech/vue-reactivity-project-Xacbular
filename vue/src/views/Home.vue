@@ -1,6 +1,6 @@
 <template>
-  <main class="home-page">
-    <nav class="home-page__nav">
+  <div class="home-page">
+    <div class="home-page__nav">
       <h1 class="home-page__brand">CoffeeBeats</h1>
 
       <div class="home-page__links">
@@ -17,9 +17,9 @@
         <span v-if="store.currentUser">{{ store.currentUser.displayName.charAt(0) }}</span>
         <span v-else>?</span>
       </router-link>
-    </nav>
+    </div>
 
-    <section class="home-page__hero">
+    <div class="home-page__hero">
       <div class="home-page__hero-content">
         <p class="home-page__eyebrow">Curated sounds for calm days</p>
         <h2 class="home-page__title">Sweet moments start here.</h2>
@@ -40,32 +40,32 @@
       <div class="home-page__hero-visual">
         <img src="/images/example.jpg" alt="Featured music cover" class="home-page__hero-image" />
       </div>
-    </section>
+    </div>
 
-    <section class="home-page__info-grid">
-      <article class="home-page__card">
+    <div class="home-page__info-grid">
+      <div class="home-page__card">
         <h3 class="home-page__card-title">Now Playing</h3>
         <p class="home-page__card-text" v-if="store.nowPlaying">
           {{ store.nowPlaying.title }} — {{ store.nowPlaying.artist }}
         </p>
         <p class="home-page__card-text" v-else>No song selected yet.</p>
-      </article>
+      </div>
 
-      <article class="home-page__card">
+      <div class="home-page__card">
         <h3 class="home-page__card-title">Favorites</h3>
         <p class="home-page__card-text">
           {{ favorites.length }} song<span v-if="favorites.length !== 1">s</span>
         </p>
-      </article>
+      </div>
 
-      <article class="home-page__card">
+      <div class="home-page__card">
         <h3 class="home-page__card-title">Playlists</h3>
         <p class="home-page__card-text">
           {{ playlists.length }} playlist<span v-if="playlists.length !== 1">s</span>
         </p>
-      </article>
-    </section>
-  </main>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
