@@ -1,6 +1,6 @@
 <template>
-  <main class="songs-page">
-    <section class="songs-page__header">
+  <div class="songs-page">
+    <div class="songs-page__header">
       <div>
         <h1 class="songs-page__title">Songs</h1>
         <p class="songs-page__subtitle">Play, favorite, and add songs to your playlists.</p>
@@ -10,13 +10,13 @@
         Logged in as {{ store.currentUser.displayName }}
       </div>
       <div class="songs-page__status" v-else>Not logged in</div>
-    </section>
+    </div>
 
-    <section class="songs-page__feedback" v-if="message">
+    <div class="songs-page__feedback" v-if="message">
       {{ message }}
-    </section>
+    </div>
 
-    <section class="songs-page__list">
+    <div class="songs-page__list">
       <Music
         v-for="song in store.songs"
         :key="song.id"
@@ -25,8 +25,8 @@
         @add-to-playlist="handleAddToPlaylist"
         @favorite-song="handleFavoriteSong"
       />
-    </section>
-  </main>
+    </div>
+  </div>
 </template>
 
 <script setup>
