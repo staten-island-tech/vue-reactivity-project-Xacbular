@@ -1,6 +1,6 @@
 <template>
-  <main class="login-page">
-    <section class="login-page__card">
+  <div class="login-page">
+    <div class="login-page__card">
       <h1 class="login-page__title">Login</h1>
 
       <form class="login-page__form" @submit.prevent="handleLogin" v-if="!store.currentUser">
@@ -13,14 +13,14 @@
         <button type="submit" class="login-page__button">Login</button>
       </form>
 
-      <section v-else class="login-page__profile">
+      <div v-else class="login-page__profile">
         <h2 class="login-page__welcome">Welcome, {{ store.currentUser.displayName }}</h2>
         <p class="login-page__info">Favorites: {{ favorites.length }}</p>
         <p class="login-page__info">Playlists: {{ playlists.length }}</p>
         <button class="login-page__button login-page__button--secondary" @click="store.logout()">
           Logout
         </button>
-      </section>
+      </div>
 
       <p class="login-page__message" v-if="message">{{ message }}</p>
 
@@ -31,8 +31,8 @@
         <br />
         guest / guest
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 </template>
 
 <script setup>
