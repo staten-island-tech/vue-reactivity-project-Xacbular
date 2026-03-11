@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CookieClicker from '@/views/CookieClicker.vue'
+import Home from '@/views/Home.vue'
 import LoginStatus from '@/views/LoginStatus.vue'
-import Playlist from '@/views/Playlist.vue'
+import Songs from '@/views/Songs.vue'
+import Playlists from '@/views/Playlists.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,7 +10,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: CookieClicker,
+      component: Home,
     },
     {
       path: '/login',
@@ -17,13 +18,16 @@ const router = createRouter({
       component: LoginStatus,
     },
     {
-      path: '/playlist',
-      name: 'playlist',
-      component: Playlist,
+      path: '/songs',
+      name: 'songs',
+      component: Songs,
+    },
+    {
+      path: '/playlists',
+      name: 'playlists',
+      component: Playlists,
     },
   ],
 })
 
 export default router
-
-//router link, router push

@@ -1,22 +1,40 @@
 <template>
-  <div class="song">
-    <img class="album-cover" :src="song.imageurl" alt="Album Cover" />
+  <article class="song-card">
+    <img
+      class="song-card__cover"
+      :src="song.imageurl || '/images/example.jpg'"
+      :alt="song.title + ' album cover'"
+    />
 
-    <div class="title">
-      <h2>{{ song.title }}</h2>
-      <h3>{{ song.artist }}</h3>
+    <div class="song-card__info">
+      <h2 class="song-card__title">{{ song.title }}</h2>
+      <h3 class="song-card__artist">{{ song.artist }}</h3>
     </div>
 
-    <div class="actions">
-      <button class="play-button" :title="'Play ' + song.title" @click="$emit('play-song', song)">
+    <div class="song-card__actions">
+      <button
+        class="song-card__button song-card__button--play"
+        :title="'Play ' + song.title"
+        @click="$emit('play-song', song)"
+      >
         ▶
       </button>
-      <button :title="'Add to Playlist: ' + song.title" @click="$emit('add-to-playlist', song)">
+      <button
+        class="song-card__button song-card__button--add"
+        :title="'Add to Playlist: ' + song.title"
+        @click="$emit('add-to-playlist', song)"
+      >
         ＋
       </button>
-      <button :title="'Like: ' + song.title" @click="$emit('like-song', song)">♥</button>
+      <button
+        class="song-card__button song-card__button--favorite"
+        :title="'Favorite: ' + song.title"
+        @click="$emit('favorite-song', song)"
+      >
+        ★
+      </button>
     </div>
-  </div>
+  </article>
 </template>
 
 <script setup>
@@ -26,73 +44,74 @@ defineProps({
     required: true,
   },
 })
-defineEmits(['play-song', 'add-to-playlist', 'like-song'])
+
+defineEmits(['play-song', 'add-to-playlist', 'favorite-song'])
 </script>
 
 <style scoped>
-h2,
-h3 {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-h2 {
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-}
-
-h3 {
-  font-size: 14px;
-  font-weight: 400;
-  color: #b3b3b3;
-  margin-top: 4px;
-}
-
-.song {
+.song-card {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   padding: 10px 14px;
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 12px;
   transition: background-color 0.15s ease;
   cursor: pointer;
+  background: #181818;
 }
 
-.song:hover {
-  background-color: #2a2a2a;
+.song-card:hover {
+  background-color: #242424;
 }
 
-.album-cover {
-  margin: 0;
+.song-card__cover {
   width: 52px;
   height: 52px;
   object-fit: cover;
   display: block;
-  border-radius: 4px;
+  border-radius: 8px;
   margin-right: 14px;
   flex-shrink: 0;
 }
 
-.title {
+.song-card__info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
 }
-.actions {
+
+.song-card__title,
+.song-card__artist {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.song-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.song-card__artist {
+  font-size: 14px;
+  font-weight: 400;
+  color: #b3b3b3;
+  margin-top: 4px;
+}
+
+.song-card__actions {
   display: flex;
   gap: 8px;
 }
 
-button {
+.song-card__button {
   width: 34px;
   height: 34px;
   border-radius: 50%;
   border: none;
-  background: #1f1f1f;
   color: white;
   font-size: 14px;
   cursor: pointer;
@@ -101,21 +120,34 @@ button {
     transform 0.1s ease;
 }
 
-button:hover {
-  background: #3a3a3a;
-}
-
-button:active {
+.song-card__button:active {
   transform: scale(0.95);
 }
 
-.play-button {
+.song-card__button--play {
   background: #1db954;
   color: black;
   font-weight: bold;
 }
 
-.play-button:hover {
+.song-card__button--play:hover {
   background: #1ed760;
+}
+
+.song-card__button--favorite {
+  background: #f5e76a;
+  color: black;
+}
+
+.song-card__button--favorite:hover {
+  background: #fff176;
+}
+
+.song-card__button--add {
+  background: #3a3a3a;
+}
+
+.song-card__button--add:hover {
+  background: #575757;
 }
 </style>
